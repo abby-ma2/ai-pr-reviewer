@@ -7,8 +7,8 @@ permissions:
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
-  pull_request_review_comment:
-    types: [created]
+#  pull_request_review_comment:
+#    types: [created]
 
 concurrency:
   group:
@@ -33,7 +33,7 @@ jobs:
         with:
           debug: true
           review_comment_lgtm: false
-          openai_heavy_model: gpt-4
+          openai_heavy_model: gpt-4-1106-preview
           path_filters: |
             !dist/**
             !**/*.lock
