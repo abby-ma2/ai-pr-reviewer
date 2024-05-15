@@ -9,7 +9,7 @@ export class TokenLimits {
     switch (model) {
       case 'gpt-4o':
         this.maxTokens = 128000
-        this.responseTokens = 8000
+        this.responseTokens = 4000
         break
       case 'gpt-4-1106-preview':
         this.maxTokens = 128000
