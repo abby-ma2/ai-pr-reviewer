@@ -26,7 +26,7 @@ export class Bot {
     this.options = options
     if (process.env.OPENAI_API_KEY) {
       const currentDate = new Date().toISOString().split('T')[0]
-      const systemMessage = `${options.systemMessage} 
+      const systemMessage = `${options.systemMessage}
 Knowledge cutoff: ${openaiOptions.tokenLimits.knowledgeCutOff}
 Current date: ${currentDate}
 
@@ -39,8 +39,8 @@ IMPORTANT: Entire response must be in the language with ISO code: ${options.lang
         apiKey: process.env.OPENAI_API_KEY,
         apiOrg: process.env.OPENAI_API_ORG ?? undefined,
         debug: options.debug,
-        maxModelTokens: openaiOptions.tokenLimits.maxTokens,
-        maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
+        // maxModelTokens: openaiOptions.tokenLimits.maxTokens,
+        // maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
         completionParams: {
           temperature: options.openaiModelTemperature,
           model: openaiOptions.model

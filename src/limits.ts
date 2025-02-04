@@ -1,4 +1,5 @@
 export class TokenLimits {
+  model: string
   maxTokens: number
   requestTokens: number
   responseTokens: number
@@ -6,6 +7,7 @@ export class TokenLimits {
 
   constructor(model = 'gpt-4o-mini') {
     this.knowledgeCutOff = '2021-09-01'
+    this.model = model
     switch (model) {
       case 'o3-mini':
         this.maxTokens = 200000
@@ -46,6 +48,6 @@ export class TokenLimits {
   }
 
   string(): string {
-    return `max_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}`
+    return `max_completion_tokens=${this.maxTokens}, request_tokens=${this.requestTokens}, response_tokens=${this.responseTokens}`
   }
 }
